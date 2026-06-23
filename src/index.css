@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Font: Inter via Google Fonts (loaded non-blocking in index.html) ─── */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #1a222e;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── Prevent layout shift for images (CLS fix) ─── */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ─── Hero section: prevent collapse on any viewport ─── */
+.hero-section {
+  min-height: 100svh; /* small viewport height units for mobile */
+}
+
+/* ─── Custom Utilities ─── */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #1a222e 0%, #38475f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-pattern {
+  background-image: radial-gradient(#22c55e 0.5px, transparent 0.5px);
+  background-size: 20px 20px;
+}
+
+/* ─── Scroll ticker ─── */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+  will-change: transform;
+}
+
+/* ─── Button CSS-transform hover/active (replaces Framer Motion overhead) ─── */
+button {
+  transform: translateZ(0); /* promote to compositor */
+}
+
+/* ─── Accessibility: focus-visible ring ─── */
+:focus-visible {
+  outline: 2px solid #22c55e;
+  outline-offset: 2px;
+}
+
+/* ─── Reduce motion for users who prefer it ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
