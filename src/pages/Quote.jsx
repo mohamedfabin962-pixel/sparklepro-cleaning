@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
-import { Sparkles, CircleCheckBig, ShieldCheck, MapPin, Calendar, Clock, Home as HomeIcon } from 'lucide-react';
+import { Sparkles, CircleCheckBig, ShieldCheck, MapPin, Calendar, Clock } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Container } from '../components/ui/Container';
 import { Section } from '../components/ui/Section';

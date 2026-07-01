@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ShieldCheck, Users, Target, Heart, Award, Sparkles } from 'lucide-react';
 import { Container } from '../components/ui/Container';
 import { Section } from '../components/ui/Section';

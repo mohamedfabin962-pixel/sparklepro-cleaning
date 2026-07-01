@@ -1,5 +1,4 @@
-import React from 'react';
-import { Star, Quote as QuoteIcon, CircleCheckBig, User, ThumbsUp, Filter } from 'lucide-react';
+import { Star, Quote as QuoteIcon, CircleCheckBig, ThumbsUp, Filter } from 'lucide-react';
 import { Container } from '../components/ui/Container';
 import { Section } from '../components/ui/Section';
 import { Card } from '../components/ui/Card';

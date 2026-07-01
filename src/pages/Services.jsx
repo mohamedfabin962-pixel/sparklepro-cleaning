@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { 
   CircleCheckBig, 
   Home as HomeIcon, 
@@ -7,8 +6,7 @@ import {
   Briefcase, 
   ArrowRight, 
   Sparkles, 
-  TrendingUp,
-  MinusCircle
+  TrendingUp
 } from 'lucide-react';
 import { Container } from '../components/ui/Container';
 import { Section } from '../components/ui/Section';
