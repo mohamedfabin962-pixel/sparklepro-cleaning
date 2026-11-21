@@ -1,8 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { MobileStickyCTA } from './MobileStickyCTA';
+
+const InstantQuoteWidget = lazy(() => import('../instant-quote/InstantQuoteWidget'));
 
 export const Layout = () => {
   const { pathname } = useLocation();
@@ -20,6 +22,9 @@ export const Layout = () => {
       </main>
       <Footer />
       <MobileStickyCTA />
+      <Suspense fallback={null}>
+        <InstantQuoteWidget />
+      </Suspense>
     </div>
   );
 };
