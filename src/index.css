@@ -18,22 +18,59 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  overflow-x: hidden;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
 }
 
-/* ─── Prevent layout shift for images (CLS fix) ─── */
-img {
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Prevent layout shift & overflow for pictures & images (CLS fix) ─── */
+picture {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+img, video, canvas, svg {
   display: block;
   max-width: 100%;
+  height: auto;
+  min-width: 0;
 }
 
 /* ─── Hero section: prevent collapse on any viewport ─── */
 .hero-section {
-  min-height: 100svh; /* small viewport height units for mobile */
+  min-height: 100svh;
+  /* small viewport height units for mobile */
 }
 
 /* ─── Custom Utilities ─── */
@@ -58,8 +95,13 @@ img {
 
 /* ─── Scroll ticker ─── */
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-scroll {
@@ -69,7 +111,8 @@ img {
 
 /* ─── Button CSS-transform hover/active (replaces Framer Motion overhead) ─── */
 button {
-  transform: translateZ(0); /* promote to compositor */
+  transform: translateZ(0);
+  /* promote to compositor */
 }
 
 /* ─── Accessibility: focus-visible ring ─── */
@@ -80,6 +123,7 @@ button {
 
 /* ─── Reduce motion for users who prefer it ─── */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

@@ -7,23 +7,23 @@ export const MobileStickyCTA = memo(() => {
     <div
       role="complementary"
       aria-label="Quick action buttons"
-      className="fixed bottom-0 left-0 right-0 z-[60] md:hidden glass p-4 border-t border-slate-200 translate-y-0 transition-transform"
+      className="fixed bottom-0 left-0 right-0 z-[60] md:hidden glass p-3 sm:p-4 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))] border-t border-slate-200 translate-y-0 transition-transform w-full max-w-full box-border"
     >
-      <div className="flex gap-4">
-        <a 
-          href="tel:+18005550123" 
+      <div className="flex gap-3 sm:gap-4 max-w-lg mx-auto w-full min-w-0">
+        <a
+          href="tel:+18005550123"
           aria-label="Call SparklePro at 800-555-0123"
-          className="flex-1 flex items-center justify-center gap-2 bg-navy-900 text-white rounded-2xl py-4 font-bold active:scale-95 transition-transform"
+          className="flex-1 flex items-center justify-center gap-2 bg-navy-900 text-white rounded-xl sm:rounded-2xl py-3 sm:py-3.5 text-sm sm:text-base font-bold active:scale-95 transition-transform"
         >
-          <Phone className="w-5 h-5" aria-hidden="true" />
+          <Phone className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
           Call Now
         </a>
-        <Link 
-          to="/quote" 
+        <Link
+          to="/quote"
           aria-label="Get a free cleaning quote"
-          className="flex-1 flex items-center justify-center gap-2 bg-freshGreen-500 text-white rounded-2xl py-4 font-bold active:scale-95 transition-transform"
+          className="flex-1 flex items-center justify-center gap-2 bg-freshGreen-500 text-white rounded-xl sm:rounded-2xl py-3 sm:py-3.5 text-sm sm:text-base font-bold active:scale-95 transition-transform"
         >
-          <Calendar className="w-5 h-5" aria-hidden="true" />
+          <Calendar className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
           Get Quote
         </Link>
       </div>

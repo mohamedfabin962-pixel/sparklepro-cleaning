@@ -7,9 +7,9 @@ export const Footer = memo(() => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy-900 text-white pt-16 pb-24 md:pb-8" role="contentinfo" aria-label="Site footer">
+    <footer className="bg-navy-900 text-white pt-12 sm:pt-16 pb-28 md:pb-12" role="contentinfo" aria-label="Site footer">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
           {/* Brand */}
           <div className="flex flex-col gap-6">
             <Link to="/" className="flex items-center gap-2" aria-label="SparklePro – Home">

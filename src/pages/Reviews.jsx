@@ -64,23 +64,23 @@ const Reviews = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-16 sm:pt-20">
       {/* Hero Header */}
-      <Section background="navy" className="!pt-32 !pb-24 overflow-visible">
+      <Section background="navy" className="!pt-24 sm:!pt-32 !pb-14 sm:!pb-24 overflow-visible">
         <Container>
           <div className="max-w-3xl mx-auto text-center relative z-10">
-            <div className="inline-flex items-center gap-2 bg-freshGreen-500/20 border border-freshGreen-500/30 text-freshGreen-400 px-6 py-3 rounded-full mb-8 font-bold">
-              <Star className="w-5 h-5 fill-freshGreen-400" />
+            <div className="inline-flex items-center gap-2 bg-freshGreen-500/20 border border-freshGreen-500/30 text-freshGreen-400 px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-6 sm:mb-8 font-bold text-xs sm:text-sm">
+              <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-freshGreen-400" />
               <span>4.9/5 Average Rating</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-8">What Our <span className="text-freshGreen-400">Clients</span> Say</h1>
-            <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8">What Our <span className="text-freshGreen-400">Clients</span> Say</h1>
+            <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
               Real reviews from real customers. We pride ourselves on delivering 5-star service every single time.
             </p>
           </div>
-          
+
           {/* Stats Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mt-10 sm:mt-16 md:mt-20">
             <RatingStat value="500+" label="Verified 5-Star Reviews" />
             <RatingStat value="98%" label="Customer Satisfaction" />
             <RatingStat value="10k+" label="Spaces Cleaned" />
@@ -92,45 +92,45 @@ const Reviews = () => {
       {/* Reviews Grid */}
       <Section background="gray">
         <Container>
-          <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
-             <h2 className="text-3xl font-bold text-navy-900">Latest Customer Feedback</h2>
-             <div className="flex gap-4">
-                <Button variant="outline" size="sm" className="flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 sm:mb-16 gap-4 sm:gap-8">
+             <h2 className="text-2xl sm:text-3xl font-bold text-navy-900">Latest Customer Feedback</h2>
+             <div className="flex flex-wrap gap-3 sm:gap-4 w-full sm:w-auto">
+                <Button variant="outline" size="sm" className="flex items-center gap-2 flex-1 sm:flex-initial justify-center">
                   <Filter className="w-4 h-4" /> Filter by Service
                 </Button>
-                <Link to="/quote">
-                  <Button size="sm">Write a Review</Button>
+                <Link to="/quote" className="flex-1 sm:flex-initial">
+                  <Button size="sm" className="w-full sm:w-auto">Write a Review</Button>
                 </Link>
              </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {reviews.map((review, i) => (
               <ReviewCard key={i} {...review} />
             ))}
           </div>
 
-          <div className="text-center mt-16">
-            <Button variant="outline" size="lg">Load More Reviews</Button>
+          <div className="text-center mt-12 sm:mt-16">
+            <Button variant="outline" size="lg" className="w-full sm:w-auto">Load More Reviews</Button>
           </div>
         </Container>
       </Section>
 
       {/* Trust Quote */}
-      <Section className="!py-32">
+      <Section className="!py-16 sm:!py-24 md:!py-32">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <QuoteIcon className="w-20 h-20 text-freshGreen-500/20 mx-auto mb-10" />
-            <p className="text-3xl md:text-4xl font-medium text-navy-900 italic leading-relaxed mb-12">
+            <QuoteIcon className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 text-freshGreen-500/20 mx-auto mb-6 sm:mb-10" />
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-navy-900 italic leading-relaxed mb-8 sm:mb-12">
               "We've tried dozens of cleaning services in the past decade, but none have matched the professionalism and consistency of SparklePro. They truly treat your space like their own."
             </p>
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-16 h-16 bg-navy-900 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+            <div className="flex items-center justify-center gap-3 sm:gap-4">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-navy-900 rounded-full flex items-center justify-center text-white text-lg sm:text-2xl font-bold">
                 JM
               </div>
               <div className="text-left">
-                <div className="font-bold text-navy-900 text-xl">James Montgomery</div>
-                <div className="text-slate-500">Corporate Facilities Director</div>
+                <div className="font-bold text-navy-900 text-base sm:text-xl">James Montgomery</div>
+                <div className="text-slate-500 text-xs sm:text-sm">Corporate Facilities Director</div>
               </div>
             </div>
           </div>
@@ -140,10 +140,10 @@ const Reviews = () => {
       {/* Ready CTA */}
       <Section background="navy">
         <Container>
-           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
              <div className="max-w-2xl text-center lg:text-left">
-               <h2 className="text-4xl font-bold mb-6">Ready to Experience the 5-Star Difference?</h2>
-               <p className="text-slate-400 text-lg">Join hundreds of happy customers and book your first clean today.</p>
+               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Ready to Experience the 5-Star Difference?</h2>
+               <p className="text-slate-400 text-sm sm:text-base md:text-lg">Join hundreds of happy customers and book your first clean today.</p>
              </div>
              <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                <Link to="/quote" className="w-full sm:w-auto">
@@ -161,14 +161,14 @@ const Reviews = () => {
 };
 
 const RatingStat = ({ value, label }) => (
-  <div className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 text-center">
-    <div className="text-4xl font-black text-white mb-2">{value}</div>
-    <div className="text-slate-400 text-xs font-bold uppercase tracking-widest leading-tight">{label}</div>
+  <div className="bg-white/5 backdrop-blur-md p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl md:rounded-[2rem] border border-white/10 text-center">
+    <div className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-1 sm:mb-2">{value}</div>
+    <div className="text-slate-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest leading-tight">{label}</div>
   </div>
 );
 
 const ReviewCard = ({ name, location, date, rating, service, text, verified }) => (
-  <Card className="flex flex-col h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+  <Card className="flex flex-col h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-5 sm:p-6 md:p-8">
     <div className="flex justify-between items-start mb-6">
       <div className="flex gap-1">
         {[...Array(5)].map((_, i) => (
@@ -177,13 +177,13 @@ const ReviewCard = ({ name, location, date, rating, service, text, verified }) =
       </div>
       <span className="text-slate-400 text-xs font-medium">{date}</span>
     </div>
-    
+
     <div className="bg-freshGreen-50 text-freshGreen-700 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full w-fit mb-4">
       {service}
     </div>
 
     <p className="text-slate-700 leading-relaxed mb-8 flex-grow">"{text}"</p>
-    
+
     <div className="space-y-4 pt-6 border-t border-slate-100">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">

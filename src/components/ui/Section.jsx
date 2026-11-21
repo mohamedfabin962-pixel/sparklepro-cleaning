@@ -29,7 +29,7 @@ export const Section = memo(({
   return (
     <section 
       id={id} 
-      className={cn('py-16 md:py-24 overflow-hidden', backgrounds[background], className)} 
+      className={cn('py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden w-full max-w-full min-w-0', backgrounds[background], className)} 
       {...props}
     >
       {animate ? (
@@ -38,6 +38,7 @@ export const Section = memo(({
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
           variants={sectionVariants}
+          className="w-full max-w-full min-w-0"
         >
           {children}
         </motion.div>

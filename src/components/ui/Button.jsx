@@ -1,13 +1,13 @@
 import React, { memo } from 'react';
 import { cn } from '../../utils/cn';
 
-export const Button = memo(React.forwardRef(({ 
-  className, 
-  variant = 'primary', 
-  size = 'md', 
+export const Button = memo(React.forwardRef(({
+  className,
+  variant = 'primary',
+  size = 'md',
   isLoading = false,
   children,
-  ...props 
+  ...props
 }, ref) => {
   const variants = {
     primary: 'bg-navy-900 text-white hover:bg-navy-800 shadow-lg shadow-navy-900/10',
@@ -17,9 +17,9 @@ export const Button = memo(React.forwardRef(({
   };
 
   const sizes = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base font-semibold',
-    lg: 'px-8 py-4 text-lg font-bold',
+    sm: 'px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold',
+    md: 'px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-semibold',
+    lg: 'px-5 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold',
   };
 
   return (
